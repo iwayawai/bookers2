@@ -1,6 +1,9 @@
 <h1>Book detail</h1>
 <div>
-<%= image_tag 'default-image.jpg' %>
+<%= flash[:notice] %>
+</div>
+<div>
+<%= image_tag @book.user.get_profile_image(100,100) %>
 <%=link_to user_path(@book.user.id) do %>
 <%= @book.user.name %>
 <% end %>
