@@ -9,7 +9,7 @@
 <thead>
 <tr>
 <th></th>
-<th>Title </th>
+<th>Title</th>
 <th>Opinion</th>
 <th colspan="3"></th>
 </tr>
@@ -23,6 +23,7 @@
 <%= image_tag @user.get_profile_image(100,100) %>
 </td>
 <% end %>
+
 <td>
 <%= link_to book_path(book.id) do %>
 <%=book.title %>

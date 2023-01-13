@@ -1,11 +1,37 @@
-<%= render 'users/user',book:@book,user:@user %>
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-me-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  
 <h1>User info</h1>
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited this obj from being saved:
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<div class="form-group">
 <%= form_with model:@user do |f| %>
+
+<div class="form-group">
 <label for="inputName">Name</label>
 <%= f.text_field :name, autofocus: true, id:"inputName" %>
+</div>
+
+<div class="form-group">
 <label for="inputImage">Image</label>
 <%= f.file_field :profile_image, placeholder:"Image",accept:"image/*" %>
+</div>
+
+<div class="form-group">
 <label for="inputIntroduction">Introduction</label>
 <%= f.text_area :introduction,autofocus: true, id:"inputIntroduction" %>
-<%= f.submit 'Update User' %>
+</div>
+
+<%= f.submit 'Update User' ,class:"btn btn-secondary"%>
 <% end %>
+</div>
+</div>
+</div>
+</div>

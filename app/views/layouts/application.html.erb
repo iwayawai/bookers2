@@ -20,18 +20,17 @@
         <a class="navbar-brand" href="/">
         <span>Bookers</span>
         </a>
+        
+       <ul class="navbar-nav ml-auto">
       
-      
-      <ul class="navbar-nav ml-auto">
-        <%= link_to books_path, class:"nav-link text-light" do %>
+      <% if user_signed_in? %>
+     
+        <%= link_to users_path , class:"nav-link text-light" do %>
         <i class="fas fa-house-user"></i>
         Home
         </a>
         <% end %>
         
-      
-      
-      <% if user_signed_in? %>
         <%= link_to users_path, class:"nav-link text-light"  do %>
         <i class="fas fa-users"></i>
         Users
@@ -52,6 +51,12 @@
         <% end %>
       
       <% else %>
+      
+        <%= link_to root_path, class:"nav-link text-light" do %>
+         <i class="fas fa-house-user"></i>
+        Home
+        </a>
+        <% end %>
       
         <%= link_to about_path, class:"nav-link text-light" do %>
         <i class="fas fa-address-card"></i>
@@ -79,11 +84,10 @@
       </div>
       </nav>
     </header>
-    
     <%= render 'layouts/notification' %>
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
-     
+  
     <%= yield %>
     <footer>
     <div class="container mt-5">
