@@ -11,21 +11,20 @@
     <% end %>
   </ul>
 <% end %>
-<div class="form-group">
 <%= form_with model:@user do |f| %>
 
 <div class="form-group">
-<label for="inputName">Name</label>
+<label for="inputName">Name</label><br>
 <%= f.text_field :name, autofocus: true, id:"inputName" %>
 </div>
 
 <div class="form-group">
-<label for="inputImage">Image</label>
+<label for="inputImage">Image</label><br>
 <%= f.file_field :profile_image, placeholder:"Image",accept:"image/*" %>
 </div>
 
 <div class="form-group">
-<label for="inputIntroduction">Introduction</label>
+<label for="inputIntroduction">Introduction</label><br>
 <%= f.text_area :introduction,autofocus: true, id:"inputIntroduction" %>
 </div>
 

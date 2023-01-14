@@ -8,14 +8,15 @@
 <table class="table">
   <thead>
   <tr>
-   <th><h4>image</h4></th>
-   <th><h4>name</h4></th>
+   <th>image</th>
+   <th>name</th>
    <th colspan="3"></th>
    </tr>
    </thead>
    <tbody>
-     <tr>
+     
 <% @users.each do|user| %>
+<tr>
 <td>
 <%=link_to user_path(user.id) do %>
 <%= image_tag user.get_profile_image(100,100) %>

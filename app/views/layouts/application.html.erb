@@ -25,8 +25,8 @@
       
       <% if user_signed_in? %>
      
-        <%= link_to users_path , class:"nav-link text-light" do %>
-        <i class="fas fa-house-user"></i>
+        <%= link_to user_path(current_user), class:"nav-link text-light" do %>
+        <i class="fas fa-home"></i>
         Home
         </a>
         <% end %>
@@ -38,7 +38,7 @@
         <% end %>
         
         <%= link_to books_path, class:"nav-link text-light" do %>
-        <i class="fas fa-book"></i>
+        <i class="fas fa-book-open"></i>
         Books
         </a>
         <% end %>
@@ -53,13 +53,13 @@
       <% else %>
       
         <%= link_to root_path, class:"nav-link text-light" do %>
-         <i class="fas fa-house-user"></i>
+         <i class="fas fa-home"></i>
         Home
         </a>
         <% end %>
       
         <%= link_to about_path, class:"nav-link text-light" do %>
-        <i class="fas fa-address-card"></i>
+        <i class="fas fa-link"></i>
         About
         </a>
         <% end %>

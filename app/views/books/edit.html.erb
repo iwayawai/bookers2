@@ -15,9 +15,10 @@
 <%= flash[:notice] %>
 </div>
 
-<%= form_with model:@book,url:book_path(@book.id),method: :patch do |f| %>
+<%= form_with model:@book do |f| %>
 
 <div class="form-group">
+ 
 <h4>Title</h4>
 <%= f.text_field :title %>
 </div>
